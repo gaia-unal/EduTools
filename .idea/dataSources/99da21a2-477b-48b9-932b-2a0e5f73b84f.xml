@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - book_db@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.0">
+    <root id="1"/>
+    <database id="2" parent="1" name="book_db">
+      <ObjectId>23420</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-02-13.23:17:28.499</IntrospectionTimestamp>
+      <IntrospectionStateNumber>18951</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11816</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11817</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12081</ObjectId>
+    </schema>
+    <sequence id="9" parent="3" name="book_id_book_seq">
+      <ObjectId>36235</ObjectId>
+      <StateNumber>18906</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="10" parent="3" name="chapter_id_chapter_seq">
+      <ObjectId>36246</ObjectId>
+      <StateNumber>18908</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="11" parent="3" name="contenidos_id_seq">
+      <ObjectId>36420</ObjectId>
+      <StateNumber>18945</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="12" parent="3" name="htmls_id_seq">
+      <ObjectId>36453</ObjectId>
+      <StateNumber>18951</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="13" parent="3" name="image_id_image_seq">
+      <ObjectId>36288</ObjectId>
+      <StateNumber>18917</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="14" parent="3" name="libros_id_seq">
+      <ObjectId>36431</ObjectId>
+      <StateNumber>18947</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="15" parent="3" name="page_id_page_seq">
+      <ObjectId>36262</ObjectId>
+      <StateNumber>18911</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="16" parent="3" name="paragraph_id_paragraph_seq">
+      <ObjectId>36275</ObjectId>
+      <StateNumber>18914</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="17" parent="3" name="preguntas_id_seq">
+      <ObjectId>36442</ObjectId>
+      <StateNumber>18949</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="18" parent="3" name="subtitle_id_subtitle_seq">
+      <ObjectId>36304</ObjectId>
+      <StateNumber>18920</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="19" parent="3" name="users_id_seq">
+      <ObjectId>36214</ObjectId>
+      <StateNumber>18899</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="20" parent="3" name="book">
+      <ObjectId>36237</ObjectId>
+      <StateNumber>18909</StateNumber>
+    </table>
+    <table id="21" parent="3" name="chapter">
+      <ObjectId>36248</ObjectId>
+      <StateNumber>18912</StateNumber>
+    </table>
+    <table id="22" parent="3" name="contenidos">
+      <ObjectId>36422</ObjectId>
+      <StateNumber>18945</StateNumber>
+    </table>
+    <table id="23" parent="3" name="htmls">
+      <ObjectId>36455</ObjectId>
+      <StateNumber>18951</StateNumber>
+    </table>
+    <table id="24" parent="3" name="image">
+      <ObjectId>36290</ObjectId>
+      <StateNumber>18918</StateNumber>
+    </table>
+    <table id="25" parent="3" name="libros">
+      <ObjectId>36433</ObjectId>
+      <StateNumber>18947</StateNumber>
+    </table>
+    <table id="26" parent="3" name="migrations">
+      <ObjectId>23423</ObjectId>
+      <StateNumber>16355</StateNumber>
+    </table>
+    <table id="27" parent="3" name="page">
+      <ObjectId>36264</ObjectId>
+      <StateNumber>18921</StateNumber>
+    </table>
+    <table id="28" parent="3" name="paragraph">
+      <ObjectId>36277</ObjectId>
+      <StateNumber>18915</StateNumber>
+    </table>
+    <table id="29" parent="3" name="password_resets">
+      <ObjectId>36227</ObjectId>
+      <StateNumber>18902</StateNumber>
+    </table>
+    <table id="30" parent="3" name="preguntas">
+      <ObjectId>36444</ObjectId>
+      <StateNumber>18949</StateNumber>
+    </table>
+    <table id="31" parent="3" name="subtitle">
+      <ObjectId>36306</ObjectId>
+      <StateNumber>18921</StateNumber>
+    </table>
+    <table id="32" parent="3" name="users">
+      <ObjectId>36216</ObjectId>
+      <StateNumber>18899</StateNumber>
+    </table>
+    <column id="33" parent="20" name="id_book">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18906</StateNumber>
+      <DefaultExpression>nextval(&apos;book_id_book_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="34" parent="20" name="created_at">
+      <Position>2</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18906</StateNumber>
+    </column>
+    <column id="35" parent="20" name="updated_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18906</StateNumber>
+    </column>
+    <column id="36" parent="20" name="title">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18906</StateNumber>
+    </column>
+    <column id="37" parent="20" name="topic">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18906</StateNumber>
+    </column>
+    <index id="38" parent="20" name="book_pkey">
+      <ObjectId>36244</ObjectId>
+      <ColNames>id_book</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="39" parent="20" name="book_pkey">
+      <ObjectId>36245</ObjectId>
+      <ColNames>id_book</ColNames>
+      <UnderlyingIndexName>book_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="21" name="id_chapter">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18908</StateNumber>
+      <DefaultExpression>nextval(&apos;chapter_id_chapter_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="41" parent="21" name="created_at">
+      <Position>2</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18908</StateNumber>
+    </column>
+    <column id="42" parent="21" name="updated_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18908</StateNumber>
+    </column>
+    <column id="43" parent="21" name="title">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18908</StateNumber>
+    </column>
+    <column id="44" parent="21" name="subtopic">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18908</StateNumber>
+    </column>
+    <column id="45" parent="21" name="book_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18908</StateNumber>
+    </column>
+    <index id="46" parent="21" name="chapter_pkey">
+      <ObjectId>36255</ObjectId>
+      <ColNames>id_chapter</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="47" parent="21" name="chapter_pkey">
+      <ObjectId>36256</ObjectId>
+      <ColNames>id_chapter</ColNames>
+      <UnderlyingIndexName>chapter_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="48" parent="21" name="chapter_book_id_foreign">
+      <ObjectId>36257</ObjectId>
+      <ColNames>book_id</ColNames>
+      <RefTableName>book</RefTableName>
+      <RefKeyName>book_pkey</RefKeyName>
+      <RefColNames>id_book</RefColNames>
+    </foreign-key>
+    <column id="49" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18945</StateNumber>
+      <DefaultExpression>nextval(&apos;contenidos_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="50" parent="22" name="contenido">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18945</StateNumber>
+    </column>
+    <column id="51" parent="22" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18945</StateNumber>
+    </column>
+    <column id="52" parent="22" name="updated_at">
+      <Position>4</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18945</StateNumber>
+    </column>
+    <index id="53" parent="22" name="contenidos_pkey">
+      <ObjectId>36429</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="54" parent="22" name="contenidos_pkey">
+      <ObjectId>36430</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>contenidos_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="55" parent="23" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18951</StateNumber>
+      <DefaultExpression>nextval(&apos;htmls_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="56" parent="23" name="header">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18951</StateNumber>
+    </column>
+    <column id="57" parent="23" name="footer">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18951</StateNumber>
+    </column>
+    <column id="58" parent="23" name="created_at">
+      <Position>4</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18951</StateNumber>
+    </column>
+    <column id="59" parent="23" name="updated_at">
+      <Position>5</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18951</StateNumber>
+    </column>
+    <index id="60" parent="23" name="htmls_pkey">
+      <ObjectId>36462</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="61" parent="23" name="htmls_pkey">
+      <ObjectId>36463</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>htmls_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="62" parent="24" name="id_image">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18917</StateNumber>
+      <DefaultExpression>nextval(&apos;image_id_image_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="63" parent="24" name="created_at">
+      <Position>2</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18917</StateNumber>
+    </column>
+    <column id="64" parent="24" name="updated_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18917</StateNumber>
+    </column>
+    <column id="65" parent="24" name="order">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18917</StateNumber>
+    </column>
+    <column id="66" parent="24" name="source">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18917</StateNumber>
+    </column>
+    <column id="67" parent="24" name="alternative">
+      <Position>6</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18917</StateNumber>
+    </column>
+    <column id="68" parent="24" name="page_id">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18917</StateNumber>
+    </column>
+    <index id="69" parent="24" name="image_pkey">
+      <ObjectId>36297</ObjectId>
+      <ColNames>id_image</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="70" parent="24" name="image_pkey">
+      <ObjectId>36298</ObjectId>
+      <ColNames>id_image</ColNames>
+      <UnderlyingIndexName>image_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="71" parent="24" name="image_page_id_foreign">
+      <ObjectId>36299</ObjectId>
+      <ColNames>page_id</ColNames>
+      <RefTableName>page</RefTableName>
+      <RefKeyName>page_pkey</RefKeyName>
+      <RefColNames>id_page</RefColNames>
+    </foreign-key>
+    <column id="72" parent="25" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18947</StateNumber>
+      <DefaultExpression>nextval(&apos;libros_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="73" parent="25" name="contenido">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18947</StateNumber>
+    </column>
+    <column id="74" parent="25" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18947</StateNumber>
+    </column>
+    <column id="75" parent="25" name="updated_at">
+      <Position>4</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18947</StateNumber>
+    </column>
+    <index id="76" parent="25" name="libros_pkey">
+      <ObjectId>36440</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="77" parent="25" name="libros_pkey">
+      <ObjectId>36441</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>libros_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="78" parent="26" name="migration">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>16355</StateNumber>
+    </column>
+    <column id="79" parent="26" name="batch">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>16355</StateNumber>
+    </column>
+    <column id="80" parent="27" name="id_page">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18911</StateNumber>
+      <DefaultExpression>nextval(&apos;page_id_page_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="81" parent="27" name="page_number">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18911</StateNumber>
+    </column>
+    <column id="82" parent="27" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18911</StateNumber>
+    </column>
+    <column id="83" parent="27" name="updated_at">
+      <Position>4</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18911</StateNumber>
+    </column>
+    <column id="84" parent="27" name="chapter_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18911</StateNumber>
+    </column>
+    <index id="85" parent="27" name="page_pkey">
+      <ObjectId>36268</ObjectId>
+      <ColNames>id_page</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="86" parent="27" name="page_pkey">
+      <ObjectId>36269</ObjectId>
+      <ColNames>id_page</ColNames>
+      <UnderlyingIndexName>page_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="87" parent="27" name="page_chapter_id_foreign">
+      <ObjectId>36270</ObjectId>
+      <ColNames>chapter_id</ColNames>
+      <RefTableName>chapter</RefTableName>
+      <RefKeyName>chapter_pkey</RefKeyName>
+      <RefColNames>id_chapter</RefColNames>
+    </foreign-key>
+    <column id="88" parent="28" name="id_paragraph">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18914</StateNumber>
+      <DefaultExpression>nextval(&apos;paragraph_id_paragraph_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="89" parent="28" name="created_at">
+      <Position>2</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18914</StateNumber>
+    </column>
+    <column id="90" parent="28" name="updated_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18914</StateNumber>
+    </column>
+    <column id="91" parent="28" name="text">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18914</StateNumber>
+    </column>
+    <column id="92" parent="28" name="order">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18914</StateNumber>
+    </column>
+    <column id="93" parent="28" name="page_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18914</StateNumber>
+    </column>
+    <index id="94" parent="28" name="paragraph_pkey">
+      <ObjectId>36281</ObjectId>
+      <ColNames>id_paragraph</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="95" parent="28" name="paragraph_pkey">
+      <ObjectId>36282</ObjectId>
+      <ColNames>id_paragraph</ColNames>
+      <UnderlyingIndexName>paragraph_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="96" parent="28" name="paragraph_page_id_foreign">
+      <ObjectId>36283</ObjectId>
+      <ColNames>page_id</ColNames>
+      <RefTableName>page</RefTableName>
+      <RefKeyName>page_pkey</RefKeyName>
+      <RefColNames>id_page</RefColNames>
+    </foreign-key>
+    <column id="97" parent="29" name="email">
+      <Position>1</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18902</StateNumber>
+    </column>
+    <column id="98" parent="29" name="token">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18902</StateNumber>
+    </column>
+    <column id="99" parent="29" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18902</StateNumber>
+    </column>
+    <index id="100" parent="29" name="password_resets_email_index">
+      <ObjectId>36233</ObjectId>
+      <ColNames>email</ColNames>
+    </index>
+    <index id="101" parent="29" name="password_resets_token_index">
+      <ObjectId>36234</ObjectId>
+      <ColNames>token</ColNames>
+    </index>
+    <column id="102" parent="30" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18949</StateNumber>
+      <DefaultExpression>nextval(&apos;preguntas_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="103" parent="30" name="contenido">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18949</StateNumber>
+    </column>
+    <column id="104" parent="30" name="created_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18949</StateNumber>
+    </column>
+    <column id="105" parent="30" name="updated_at">
+      <Position>4</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18949</StateNumber>
+    </column>
+    <index id="106" parent="30" name="preguntas_pkey">
+      <ObjectId>36451</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="107" parent="30" name="preguntas_pkey">
+      <ObjectId>36452</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>preguntas_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="108" parent="31" name="id_subtitle">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18920</StateNumber>
+      <DefaultExpression>nextval(&apos;subtitle_id_subtitle_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="109" parent="31" name="created_at">
+      <Position>2</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18920</StateNumber>
+    </column>
+    <column id="110" parent="31" name="updated_at">
+      <Position>3</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18920</StateNumber>
+    </column>
+    <column id="111" parent="31" name="order">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18920</StateNumber>
+    </column>
+    <column id="112" parent="31" name="text">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18920</StateNumber>
+    </column>
+    <column id="113" parent="31" name="page_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18920</StateNumber>
+    </column>
+    <index id="114" parent="31" name="subtitle_pkey">
+      <ObjectId>36310</ObjectId>
+      <ColNames>id_subtitle</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="115" parent="31" name="subtitle_pkey">
+      <ObjectId>36311</ObjectId>
+      <ColNames>id_subtitle</ColNames>
+      <UnderlyingIndexName>subtitle_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="116" parent="31" name="subtitle_page_id_foreign">
+      <ObjectId>36312</ObjectId>
+      <ColNames>page_id</ColNames>
+      <RefTableName>page</RefTableName>
+      <RefKeyName>page_pkey</RefKeyName>
+      <RefColNames>id_page</RefColNames>
+    </foreign-key>
+    <column id="117" parent="32" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18899</StateNumber>
+      <DefaultExpression>nextval(&apos;users_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="118" parent="32" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18899</StateNumber>
+    </column>
+    <column id="119" parent="32" name="email">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18899</StateNumber>
+    </column>
+    <column id="120" parent="32" name="username">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18899</StateNumber>
+    </column>
+    <column id="121" parent="32" name="password">
+      <Position>5</Position>
+      <DataType>varchar(60)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>18899</StateNumber>
+    </column>
+    <column id="122" parent="32" name="created_at">
+      <Position>6</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18899</StateNumber>
+    </column>
+    <column id="123" parent="32" name="updated_at">
+      <Position>7</Position>
+      <DataType>timestamp(0)|0</DataType>
+      <StateNumber>18899</StateNumber>
+    </column>
+    <index id="124" parent="32" name="users_pkey">
+      <ObjectId>36223</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="125" parent="32" name="users_email_unique">
+      <ObjectId>36225</ObjectId>
+      <ColNames>email</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="126" parent="32" name="users_pkey">
+      <ObjectId>36224</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="127" parent="32" name="users_email_unique">
+      <ObjectId>36226</ObjectId>
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>

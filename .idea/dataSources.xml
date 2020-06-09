@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="PostgreSQL - book_db@localhost" uuid="99da21a2-477b-48b9-932b-2a0e5f73b84f">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/book_db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - content_db@localhost" uuid="7c816e36-8b92-4f3e-b954-670d3d5b6952">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/content_db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="PostgreSQL - question_db@localhost" uuid="5c249aa5-35fd-42a4-a6b9-49d72fd2a8e7">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/question_db</jdbc-url>
+    </data-source>
+  </component>
+</project>

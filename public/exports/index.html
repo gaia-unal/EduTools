@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+                    <html>
+                    <head>
+                        <meta charset='UTF-8'>
+                        <title>Objeto</title>
+                    </head>
+                            <link rel='stylesheet' href='css/style.css'>
+                            <script type='text/javascript' src='plugin/jquery.js'></script>
+                            <script type='text/javascript' src='plugin/turn.js'></script>
+	          <script type='text/javascript' src='plugin/validaQuestionario.js'></script>
+                    
+                    <body class='cuerpo' >        <div id="elcuestionario">        <form class="pregunta" opcion="false" id="pre1" style="border-style: solid; border-color: #acb4b6; border-radius: 10px;"><p class="q">Las cpus almacenan datos?</p><input id="true1" name="pre1" value="true" type="radio"><label for="true1">Verdadero</label><br><input id="false1" name="pre1" value="false" type="radio"><label for="false1">Falso</label></form><br><form class="pregunta" opcion="false" id="pre2" style="border-style: solid; border-color: #acb4b6; border-radius: 10px;"><p class="q">Los discos duros agilizan el computador?</p><input id="true2" name="pre2" value="true" type="radio"><label for="true2">Verdadero</label><br><input id="false2" name="pre2" value="false" type="radio"><label for="false2">Falso</label></form><br><form class="pregunta" opcion="false" id="pre3" style="border-style: solid; border-color: #acb4b6; border-radius: 10px;"><p class="q">¿El procesador agiliza el computador?</p><input id="true3" name="pre3" value="true" type="radio"><label for="true3">Verdadero</label><br><input id="false3" name="pre3" value="false" type="radio"><label for="false3">Falso</label></form><br><form class="pregunta" id="pre4" opcion="Unidad de CD" style="border-style: solid; border-color: #acb4b6; border-radius: 10px;"><p class="q">Cual de estos no es indispensable par EL FUNCIONAMIENTO DE UN PC</p>            <input name="pre4" value="CPU" style=" font-weight: bold;" type="radio">CPU<br><input name="pre4" value="DD" style=" font-weight: bold;" type="radio">DD<br><input name="pre4" value="RAM" style=" font-weight: bold;" type="radio">RAM<br><input name="pre4" value="Unidad de CD" style=" font-weight: bold;" type="radio">Unidad de CD<br></form><br> <input class="btn btn-success" id="verificar" name="verifica" value="Verificar" type="button"></div>    <script>
+                        $('#flipbook').turn({
+                                width: 800,
+                                height: 600,
+                                autoCenter: true
+                            });
+                    </script>
+                    </body>
+                    
+                    </html>
