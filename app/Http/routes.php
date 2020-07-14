@@ -145,6 +145,12 @@ Route::group(['prefix' => 'Cuestionario'],function (){
         'uses' 	=> 'ExportController@questionario',
         'as'	=> 'Question.exportQuest'
     ]);
+    
+    // exportar como SCORM
+    Route::get('/exportQuestSCORM/{id}',[
+        'uses' 	=> 'ExportController@questionarioSCORM',
+        'as'	=> 'Question.exportQuestSCORM'
+    ]);
 
 
 });
