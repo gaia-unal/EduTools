@@ -1,51 +1,62 @@
 doStart();
-function validaP(formulario, nombre){
-	elementos = document.getElementById(formulario).elements;
-	longitud = document.getElementById(formulario).length;
-	for (var i = 0; i < longitud; i++) {
-		if (elementos[i].name == nombre && elementos[i].type == "radio" && elementos[i].checked == true) {
-			return elementos[i].value;
-			}
-		}
-		return null;
-}
-
 var correctas = 0;
 var pregun=0;
 var nota;
 
-jQuery(document).ready(
-function($) {
-$("#verificar").click(function() {
-                
-                $("#elcuestionario form").each(function (index)
-                {
-                    indice = index+1;
-                    var radioU = validaP("pre"+indice, "pre"+indice);
-                    var radioP = $("#pre"+indice).attr("opcion");
-                    if(radioU==radioP)
-                    {
-                        $("#pre"+indice).css("background-color","#CCFF90");
-                        correctas +=1;
-                        }
-                    else
-                    {
-                        $("#pre"+indice).css("background-color","#FF9E80");
-                        
-                    }
-                    pregun+=1;
-                    
-                });
-            // alert("Preguntas correctas: "+ correctas);
-            displayScore();
-            alert("Su nota es: " + nota.toPrecision(2));
-            correctas=0;
-            pregun=0;
-			
-        	});
+function validaP(nombre){
+	var elementos = document.getElementById(nombre).elements;
+	var longitud = document.getElementById(nombre).length;
+	for (var i = 0; i < longitud; i++) {
+		if (elementos[i].name == nombre && elementos[i].type == "radio" && elementos[i].checked == true) {
+			return elementos[i].value;
+		}
+	}
+	return -1;
+}
+
+jQuery(document).ready(function($) {
+      
+      $("#verificar").click(function() {
+        var band=true;
+        $("#elcuestionario form").each(function (index){
+          indice = index+1;
+          var radioP = $("#pre"+indice).attr("opcion");
+          if(radioP=="multiplex"){
+            if(band){
+              band=false;
+
+            $('input[min="1"]').each(function (itera){
+              iter = itera+1;
+              var op = $("#op"+iter).attr("opcion");
+              var val=$("#op"+iter).val();
+
+              if(op==val && op!=undefined){
+                correctas +=1;
+              }else{
+                $("#pre"+iter).css("background-color","#FF9E80");
+              }
+              if(op!=undefined){pregun+=1;}
+            });
+          }
+            pregun-=1;
+          }else{
+            var radioU = validaP("pre"+indice);
+            if(radioU==radioP){
+              $("#pre"+indice).css("background-color","#CCFF90");
+              correctas +=1;
+            }else{
+              $("#pre"+indice).css("background-color","#FF9E80");
+            }
+          }
+          pregun+=1;
+            
+        });
+        displayScore();
+        alert("Su nota es: " + nota.toPrecision(2));
+        correctas=0;
+        pregun=0;
+      }); 
 });
-
-
 
 //ScormFunctions
 function RecordTest(nota) {

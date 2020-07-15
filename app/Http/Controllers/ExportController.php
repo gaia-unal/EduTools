@@ -23,26 +23,26 @@ class ExportController extends Controller
 
         $archivo = $encabezado.$content.$pieP;
         //Creacion del archivo con el contenido
-        $archivo_salida = "exports/index.html";
+        $archivo_salida = "exports/html/index.html";
         $fp = fopen($archivo_salida,'w');
         fwrite($fp,$archivo);
         fclose($fp);
 
         //$public_dir = '../../www/edutools';
         $public_dir = public_path();
-        $files = 'exports/';
+        $files = 'exports/html/';
 
         $zipper = new Zipper;
-        $zipper -> make('libro.zip') -> add($files);
+        $zipper -> make('HTML_libro.zip') -> add($files);
 
         $headers = array(
             'Content-Type' => 'application/octet-stream',
         );
 
-        $filetopath = $public_dir.'/'."libro.zip";
+        $filetopath = $public_dir.'/'."HTML_libro.zip";
 
         if(file_exists($filetopath)){
-            return response()->download($filetopath,"libro.zip",$headers);
+            return response()->download($filetopath,"HTML_libro.zip",$headers);
         }
         return ['status'=>'file does not exist'];
     }
@@ -58,26 +58,26 @@ class ExportController extends Controller
 
         $archivo = $encabezado.$content.$pieP;
         //Creacion del archivo con el contenido
-        $archivo_salida = "exports/index.html";
+        $archivo_salida = "exports/html/index.html";
         $fp = fopen($archivo_salida,'w');
         fwrite($fp,$archivo);
         fclose($fp);
 
         //$public_dir = '../../www/edutools';
         $public_dir = public_path();
-        $files = 'exports/';
+        $files = 'exports/html/';
 
         $zipper = new Zipper;
-        $zipper -> make("contenido.zip") -> add($files);
+        $zipper -> make("HTML_contenido.zip") -> add($files);
 
         $headers = array(
             'Content-Type' => 'application/octet-stream',
         );
 
-        $filetopath = $public_dir.'/'."contenido.zip";
+        $filetopath = $public_dir.'/'."HTML_contenido.zip";
 
         if(file_exists($filetopath)){
-            return response()->download($filetopath,"contenido.zip",$headers);
+            return response()->download($filetopath,"HTML_contenido.zip",$headers);
         }
         return ['status'=>'file does not exist'];
     }
@@ -103,7 +103,7 @@ class ExportController extends Controller
         $files = 'exports/html/';
 
         $zipper = new Zipper;
-        $zipper -> make("HTML_cuestionario.zip") -> add($files);
+        $zipper -> make("HTML_cuestionario.zip") -> add($files)->close();
 
         $headers = array(
             'Content-Type' => 'application/octet-stream',
@@ -136,7 +136,7 @@ class ExportController extends Controller
         $files = 'exports/scorm/';
 
         $zipper = new Zipper;
-        $zipper -> make("SCORM_cuestionario.zip") -> add($files);
+        $zipper -> make("SCORM_cuestionario.zip") -> add($files)->close();
 
         $headers = array(
             'Content-Type' => 'application/octet-stream',

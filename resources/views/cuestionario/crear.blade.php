@@ -18,6 +18,7 @@
             <h3>Seleccione el tipo de pregunta a agregar</h3>
             <input type="button" class="btn btn-primary" id="vf" value="Verdadero/Falso">
             <input type="button" class="btn btn-primary" id="selmul" value="Selección Múltiple">
+            <input type="button" class="btn btn-primary" id="aso" value="Asociación">
             <input type="button" class="btn btn-warning" id="btRemove" value="Eliminar Elemento" class="bt" />
             <input type="button" class="btn btn-danger" id="btRemoveAll" value="Eliminar Todo" class="bt" />
             <br />
@@ -67,11 +68,31 @@
             <!--<input type="button" value="elim"> <br>-->
             <input class="guardar btn btn-info" id="guardarSM" type="button" value="Guardar">
         </div>
-    </section>
-    <section id="cuestionario" style="border-style: groove; border-radius: 5px;">
-        <div id="elcuestionario">
 
+        <div id="qaso" style="display: none; border: solid; border-color:lightsteelblue">
+            Asociación de conceptos 
+            <br>
+            <form name="form_AS">
+                <section id="questionAS">
+                <textarea class="con_pre" id="concepto" type="text" rows="1" cols="25" style="max-height: 6.4em; max-width: 300px;" placeholder="Digite el concepto a agregar!"></textarea>
+                <br>
+                <textarea class="con_pre" id="significado" type="text" rows="2" cols="50" style="max-height: 6.4em; max-width: 300px;" placeholder="Digite el significado a agregar!"></textarea>
+                <br>
+                </section>
+            </form>
+
+            <form id="opcionesAS"></form>
+
+            <input type="button" class="btn btn-default" id="ag" value="Agregar">
+            <br>
+            <input class="guardar btn btn-info" id="guardarAS" type="button" value="Guardar">
         </div>
+        
+    </section>
+
+
+    <section id="cuestionario" style="border-style: groove; border-radius: 5px;">
+        <div id="elcuestionario"></div>
     </section>
 
     {!! Form::open(['route' => 'Store.pregunta', 'method' => 'POST', 'id' => 'form_pregunta', 'class'=>'form-horizontal']) !!}
@@ -89,17 +110,28 @@
 @endsection @section('javascript')
     <script type="text/javascript">
         $(document).ready(function() {
-            var p = 0;
+            //Mostrar o no
             $('#vf').on('click', function(event) {
                 $('#qvf').toggle('show');
                 $('#qsm').hide();
-                $('#qop').hide();
+                $('#qaso').hide();
+                $('#qop').hide();  //no existe
             });
             $('#selmul').on('click', function(event) {
                 $('#qsm').toggle('show');
                 $('#qvf').hide();
-                $('#qop').hide();
+                $('#qaso').hide();
+                $('#qop').hide(); //no existe
             });
+            $('#aso').on('click', function(event) {
+                $('#qaso').toggle('show');
+                $('#qsm').hide();
+                $('#qvf').hide();
+                $('#qop').hide(); //no existe
+            });
+
+            var p = 0;
+
             //Guarda pregunta Verdadero Falso
             $("#guardarVF").click(function() {
                 if (p <= 9) {
@@ -122,12 +154,21 @@
                     $("#elcuestionario").append('<label id="limit">Limite Alcanzado</label>');
                     $('#vf').attr('class', 'btn bt-disable');
                     $('#vf').attr('disabled', 'disabled');
+
                     $('#selmul').attr('class', 'btn bt-disable');
                     $('#selmul').attr('disabled', 'disabled');
+                    
+                    $('#aso').attr('class', 'btn bt-disable');
+                    $('#aso').attr('disabled', 'disabled');
+
                     $('#guardarVF').attr('class', 'btn bt-disable');
                     $('#guardarVF').attr('disabled', 'disabled');
+                    
                     $('#guardarSM').attr('class', 'btn bt-disable');
                     $('#guardarSM').attr('disabled', 'disabled');
+
+                    $('#guardarAS').attr('class', 'btn bt-disable');
+                    $('#guardarAS').attr('disabled', 'disabled');
                 }
             });
             //Guarda pregunta seleccion multiple
@@ -136,7 +177,7 @@
                     p++;
                     pregunta = "pre" + p;
                     var contenido2 = $('textarea[id=textoSM]').val();
-                    console.log("Esta pregunta es: " + contenido2);
+                    // console.log("Esta pregunta es: " + contenido2);
                     var opt_sm = obtenerRadioSeleccionado("questionOpciones", "pre"+p);
                     if (opt_sm==null) {alert("seleccione una respuesta");
                         p--;
@@ -150,15 +191,24 @@
                     $("#questionOpciones").empty();
                     }
                 } else { //se establece un limite para añadir elementos, 10 es el limite
-                    $("#elcuestionario").append('<label id="limit">Limite Alcanzado</labelid>');
+                    $("#elcuestionario").append('<label id="limit">Limite Alcanzado</label>');
                     $('#vf').attr('class', 'btn bt-disable');
                     $('#vf').attr('disabled', 'disabled');
+
                     $('#selmul').attr('class', 'btn bt-disable');
                     $('#selmul').attr('disabled', 'disabled');
+                    
+                    $('#aso').attr('class', 'btn bt-disable');
+                    $('#aso').attr('disabled', 'disabled');
+
                     $('#guardarVF').attr('class', 'btn bt-disable');
                     $('#guardarVF').attr('disabled', 'disabled');
+                    
                     $('#guardarSM').attr('class', 'btn bt-disable');
                     $('#guardarSM').attr('disabled', 'disabled');
+
+                    $('#guardarAS').attr('class', 'btn bt-disable');
+                    $('#guardarAS').attr('disabled', 'disabled');
                 }
             });
             //Guarda opcion de seleccion multiple
@@ -169,6 +219,73 @@
                 $("#questionOpciones").append('<input type="radio" name="pre'+pp+'" value="' + contenido3 + '" style=" font-weight: bold;">' + contenido3 + '<br>');
                 $("#textoOptSM").val("");
 
+            });
+
+            //Guarda pregunta de asociación
+            $("#guardarAS").click(function() {
+                if (p <= 9) {
+                    p++;
+                    var flag=true;
+                    pregunta = "pre" + p;
+                    var contenidoAS = $('textarea[id=concepto]').val();
+                    for (let i = (cod-num+1); i < cod && flag; i++) {
+                        var opt = $('input[id="op'+i+'"]').val();
+                        if (opt=='' || opt==null) {
+                            alert("Seleccione un número para cada opción "+i);
+                            p--;
+                            flag=false;
+                        }else{
+                            $('input[id="op'+i+'"]').attr('opcion', opt);
+                            $('input[id="op'+i+'"]').val(null);
+                        }
+                    }
+                    
+                    if(flag){
+                        // var opt_sm=123;
+                        $("#elcuestionario").append('<form class="pregunta" id="' + pregunta + '" opcion="multiplex" style="border-style: solid; border-color: #acb4b6; border-radius: 10px;"><p class="q"> Asocie el concepto</p></form> <br>');
+                        // $("#textoSM").val("");
+                        
+                        var questionSet = $("#opcionesAS").html();
+
+                        $("#" + pregunta).append(questionSet);
+                        $("#opcionesAS").empty();
+                        num=1;
+                    }
+                } else { //se establece un limite para añadir elementos, 10 es el limite
+                    $("#elcuestionario").append('<label id="limit">Limite Alcanzado</label>');
+                    $('#vf').attr('class', 'btn bt-disable');
+                    $('#vf').attr('disabled', 'disabled');
+
+                    $('#selmul').attr('class', 'btn bt-disable');
+                    $('#selmul').attr('disabled', 'disabled');
+                    
+                    $('#aso').attr('class', 'btn bt-disable');
+                    $('#aso').attr('disabled', 'disabled');
+
+                    $('#guardarVF').attr('class', 'btn bt-disable');
+                    $('#guardarVF').attr('disabled', 'disabled');
+                    
+                    $('#guardarSM').attr('class', 'btn bt-disable');
+                    $('#guardarSM').attr('disabled', 'disabled');
+
+                    $('#guardarAS').attr('class', 'btn bt-disable');
+                    $('#guardarAS').attr('disabled', 'disabled');
+                    
+                }
+            });
+
+            var num=1;
+            var cod=1;
+            //Guarda asociación
+            $("#ag").click(function() {
+                var concepto = $('textarea[id=concepto]').val();
+                var significado = $('textarea[id=significado]').val();
+                
+                $("#opcionesAS").append('<b>'+num+'). </b> <p style="display: inline-block; width: 160px;">'+concepto+'</p><input type="number" id="op'+cod+'"   min=1 style="width:42px; height:20px;text-align: center;"> '+significado+'<br />');
+                $("#significado").val("");
+                $("#concepto").val("");
+                num++;
+                cod++;
             });
 
             $('#btRemove').click(function() { // Elimina un elemento por click
